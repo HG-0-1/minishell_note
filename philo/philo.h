@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 15:11:17 by helfayez          #+#    #+#             */
-/*   Updated: 2026/07/29 01:39:23 by helfayez         ###   ########.fr       */
+/*   Updated: 2026/07/29 13:08:12 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_philo
 	t_fork				*left_fork;
 	t_fork				*right_fork;
 	pthread_mutex_t		meal_lock;
-	pthread_cond_t		cond;
+	pthread_cond_t		cond; // forbidden
 	t_data				*data;
 
 }						t_philo;
