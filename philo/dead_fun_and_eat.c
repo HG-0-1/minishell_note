@@ -53,17 +53,6 @@ int	check_death(t_philo *philo)
 	return (0);
 }
 
-void	next_deadline(struct timespec *ts)
-{
-	struct timeval	tv;
-	long			total_us;
-
-	gettimeofday(&tv, NULL);
-	total_us = tv.tv_usec + 5000;
-	ts->tv_sec = tv.tv_sec + total_us / 1000000;
-	ts->tv_nsec = (total_us % 1000000) * 1000;
-}
-
 void	eat(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->meal_lock);

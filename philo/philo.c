@@ -24,7 +24,6 @@ int	creat_philosopher(t_philo *philo, t_data *data)
 		philo[i].left_fork = &data->forks[i];
 		philo[i].right_fork = &data->forks[(i + 1) % data->num_philo];
 		pthread_mutex_init(&philo[i].meal_lock, NULL);
-		pthread_cond_init(&philo[i].cond, NULL);// forbidden
 		philo[i].last_meal = data->start_time;
 		philo[i].meal_eaten = 0;
 		i++;
@@ -88,7 +87,6 @@ int	main(int argc, char **argv)
 	while (i < data.num_philo)
 	{
 		pthread_mutex_destroy(&philos[i].meal_lock);
-		pthread_cond_destroy(&philos[i].cond); // forbidden
 		i++;
 	}
 	pthread_mutex_destroy(&data.print_lock);

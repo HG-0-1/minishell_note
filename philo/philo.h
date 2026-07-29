@@ -55,7 +55,6 @@ typedef struct s_philo
 	t_fork				*left_fork;
 	t_fork				*right_fork;
 	pthread_mutex_t		meal_lock;
-	pthread_cond_t		cond; // forbidden
 	t_data				*data;
 
 }						t_philo;
@@ -74,7 +73,6 @@ void					smart_sleep(long time, t_philo *philo);
 int						ft_atoi(const char *nptr);
 int						is_valid_number(const char *str);
 void					eat(t_philo *philo);
-void					next_deadline(struct timespec *ts);
 int						is_hungriest(t_philo *philo);
 int						all_ate_enough(t_data *data);
 int						init_data(t_data *data, t_philo **philos, int argc,
